@@ -1,25 +1,25 @@
 import logo from './logo.svg';
 import './App.css';
+import React, { useState } from 'react';
 
 function App() {
+
+  const [state, setState] = useState("verde");
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+ 
+    <div className='superCaja'>
+    <div className='barraNegra'></div>
+      <div className="cajaNegra">
+        <div onClick={()=>setState("roja")} className={"luz roja"+(state==="roja"? " brillo": " ")}> </div>
+        <div onClick={()=>setState("amarilla")} className={"luz amarilla"+(state==="amarilla"? " brillo": " ")}> </div>
+        <div onClick={()=>setState("verde")} className={"luz verde"+(state==="verde"? " brillo": " ")}> </div>
+      </div>
     </div>
-  );
+  )
+
 }
+
+
 
 export default App;
